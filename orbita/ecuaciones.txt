@@ -1,0 +1,104 @@
+Para la solucion de este problema, se recurre a la dinamica lagrangina con el fin de encontrar la ecuaciones diferenciales que modelen el movimiento de este sistema.
+
+por lo tanto:
+
+\begin{equation}
+\frac{\partial}{\partial t} \left(\frac{\partial L}{\partial q_i}\right)=\frac{\partial L}{\partial q_i}
+\end{equation}
+
+Utilizando la ecuación anterior y considerando que el movimiento se va a realizar para pequeñas oscilaciones($cos\theta=1;\,sen\theta=\theta$), podemos empezar consiguiendo la expresión para nuestro lagrangiano:
+
+\begin{equation}
+L=T-U
+\end{equation}
+
+si:
+l= longitud de los péndulos.
+
+m= masa de los péndulos.
+
+$\theta$= ángulo de oscilación péndulo 1
+
+$\varphi$= ángulo de oscilación péndulo 2
+
+Para las posiciones tenemos:
+
+\begin{equation*}
+x_{1}=l\theta  \Rightarrow \, \dot{x_1}=l\dot{\theta}
+\end{equation*}
+
+\begin{equation}
+x_{2}=l\varphi \Rightarrow \, \dot{x_2}=l\dot{\varphi} 
+\end{equation}
+
+\begin{equation}
+ y_1=-l \Rightarrow\, \dot{y_1}=0
+\end{equation}
+
+\begin{equation}
+y_2=-l \Rightarrow \, \dot{y_2}=0
+\end{equation}
+
+calculado las energías (cinética y potencial), tenemos:
+
+\begin{equation}
+T=\frac{1}{2}m\left( l^2\dot{\theta}^2\right)+\frac{1}{2}m\left( l^2\dot{\varphi}^2\right)
+\end{equation}
+
+\begin{equation}
+U=\frac{mgl}{2}\left(\theta^2+\varphi^2\right)+\frac{kl^2}{2}\left(\theta-\varphi\right)^2
+\end{equation}
+
+por lo tanto el lagrangiano queda:
+
+\begin{equation}
+L=\frac{1}{2}m\left( l^2\dot{\theta}^2\right)+\frac{1}{2}m\left( l^2\dot{\varphi}^2\right)-\frac{mgl}{2}\theta^2-\frac{mgl}{2}\varphi^2-\frac{kl^2}{2}\left(\theta-\varphi\right)^2
+\end{equation}
+
+aplicando la ecuacion de euler lagrange para $\theta$:
+
+\begin{equation}
+\frac{\partial L}{\partial\theta}-\frac{d}{dt} \left(\frac{\partial L}{\partial \dot{\theta}}\right)=0
+\end{equation}
+
+\begin{equation}
+\frac{\partial L}{\partial\theta}=-mgl\theta-kl^2(\theta-\varphi)
+\end{equation}
+
+\begin{equation}
+\frac{\partial L}{\partial \dot{\theta}}=ml^2\dot{\theta} \, \Rightarrow \, \frac{d}{dt} \left(\frac{\partial L}{\partial \dot{\theta}}\right)=ml^2\ddot{\theta}
+\end{equation}
+
+\begin{equation}
+\Rightarrow -mgl\theta-kl^2(\theta-\varphi)-ml^2\ddot{\theta}=0
+\end{equation}
+
+cancelando los negativos y reorganizando la primera ecuación diferencial nos queda:
+
+\begin{equation}
+\ddot{\theta}+\frac{g}{l}\theta+\frac{k}{m}(\theta-\varphi)=0
+\end{equation}
+
+aplicando la ecuación de Euler lagrange para $\varphi$:
+
+\begin{equation}
+\frac{\partial L}{\partial\varphi}-\frac{d}{dt} \left(\frac{\partial L}{\partial \dot{\varphi}}\right)=0
+\end{equation}
+
+\begin{equation}
+\frac{\partial L}{\partial\varphi}=-mgl\varphi+kl^2(\theta-\varphi)
+\end{equation}
+
+\begin{equation}
+\frac{\partial L}{\partial \dot{\varphi}}=ml^2\dot{\varphi} \, \Rightarrow \, \frac{d}{dt} \left(\frac{\partial L}{\partial \dot{\varphi}}\right) = ml^2\ddot{\varphi} 
+\end{equation}
+
+\begin{equation}
+\Rightarrow mgl\varphi-kl^2(\theta-\varphi)+ml^2\ddot{\varphi} =0
+\end{equation}
+
+Reorganizando terminos con el fin de que $\ddot{\varphi}$ quede solo tenemos:
+
+\begin{equation}
+\ddot{\varphi}+\frac{y}{l}\varphi-\frac{k}{m}(\theta-\varphi)=0
+\end{equation}
